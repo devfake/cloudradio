@@ -1,0 +1,5 @@
+/backend/vendor
+/client/node_modules
+/public/storage
+/backend/.env
+.idea

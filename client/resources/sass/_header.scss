@@ -1,0 +1,28 @@
+header {
+  position: absolute;
+  z-index: 200;
+  text-align: center;
+  width: 100%;
+  margin: 15vh 0 0 0;
+}
+
+.hideIndex {
+  z-index: -1 !important;
+}
+
+.title {
+  color: #fff;
+  font-size: 34px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+
+  }
+}
+
+.author {
+  color: #222;
+  font-size: 22px;
+  margin: 10px 0 0 0;
+}

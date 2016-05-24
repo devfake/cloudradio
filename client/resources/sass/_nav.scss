@@ -1,0 +1,323 @@
+nav {
+  background: #222;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-item {
+  font-size: 22px;
+  position: relative;
+  color: rgba(255,255,255,.2);
+  transition: background 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s;
+  float: left;
+  //height: 60px;
+
+  > span {
+    z-index: 1000;
+    padding: 17px 20px;
+    cursor: pointer;
+    height: 60px;
+    float: left;
+    position: relative;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.active {
+    background: gray;
+    color: #fff;
+  }
+}
+
+.second-nav-item {
+  float: right;
+}
+
+.volume-wrap {
+  width: 170px;
+  height: 150px;
+  position: relative;
+  z-index: 1000;
+  margin: 0 30px 0 0;
+}
+
+.noUi-target {
+  height: 10px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  margin: 25px 0 0 0;
+}
+
+.noUi-target.noUi-connect {
+  background: #8c585e;
+  box-shadow: none;
+}
+
+.noUi-background {
+  background: #4e4e4c;
+  border-left: 3px solid #b58d92;
+}
+
+.noUi-origin {
+  border-radius: 0;
+}
+
+.noUi-background {
+  box-shadow: none;
+}
+
+.noUi-handle {
+  border: 0;
+  box-shadow: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: transparent;
+  left: -10px;
+  cursor: pointer;
+  top: -5px;
+}
+
+.noUi-handle::before, .noUi-handle::after {
+  background: none;
+}
+
+.music-controls {
+  left: 50%;
+  z-index: 600;
+  transform: translateX(-50%);
+  position: absolute;
+
+  svg {
+    fill: #fff;
+    transition: opacity .1s ease-in-out 0s;
+    float: left;
+    cursor: pointer;
+  }
+}
+
+.second-nav-items {
+  float: right;
+  position: relative;
+  z-index: 1000;
+}
+
+.play-btn,
+.pause-btn {
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.next-btn,
+.last-btn {
+  opacity: .4;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.repeat-btn {
+  fill: #fff;
+  opacity: .4;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:active {
+    opacity: .4;
+  }
+
+  &.active {
+    fill: #d9a977;
+    opacity: .8;
+  }
+}
+
+/**
+ * SUB NAVIGATION
+ */
+
+.option-elements {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 40px;
+  z-index: 500;
+  opacity: 0;
+  height: 100%;
+  overflow: auto;
+  transition: opacity .3s ease-in-out .1s;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  p {
+    line-height: 21pt;
+    font-size: 17px;
+    padding: 0 0 30px 0;
+  }
+
+  a {
+    color: #fff;
+    border-bottom: 1px solid #b2b2b2;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 1px solid #dadada;
+    }
+  }
+
+  h4 {
+    font-size: 22px;
+    float: left;
+    margin: 0 0 30px 0;
+    width: 100%;
+    color: #222;
+  }
+}
+
+code {
+  font-size: 13px;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.filter-divider {
+  float: left;
+  clear: both;
+  margin: 0 0 10px 0;
+
+  &:first-of-type {
+    // todo: top & trending filter
+    //margin: 0;
+  }
+
+  input {
+    float: left;
+    cursor: pointer;
+    margin: 3px 0 0 0;
+  }
+
+  label {
+    cursor: pointer;
+    float: left;
+    margin: 0 20px 0 8px;
+    font-size: 17px;
+  }
+}
+
+.clear-history {
+  float: right;
+  background: #222;
+  font-weight: normal;
+  color: #fff;
+  font-size: 15px;
+  padding: 2px 10px;
+  margin: 3px 0 0 0;
+  cursor: pointer;
+
+  &:hover {
+    background: #d59657;
+  }
+
+  &:active {
+    background: #222;
+  }
+}
+
+.subnav {
+  position: absolute;
+  overflow: hidden;
+  background: gray;
+  max-width: 440px;
+  width: 100%;
+  left: -30px;
+  transition: opacity .2s ease-in-out 0s, left .2s ease-in-out 0s, visibility .2s ease-in-out 0s;
+  bottom: 60px;
+  opacity: 0;
+  height: calc(100% - 60px);
+  visibility: hidden;
+  color: #fff;
+
+  &.active {
+    opacity: 1;
+    left: 0;
+    visibility: visible;
+  }
+}
+
+.divider {
+  float: left;
+  width: 300px;
+  margin: 20px 0;
+  height: 2px;
+  background: #222;
+}
+
+.history-items {
+  float: left;
+  list-style: none;
+  width: 100%;
+}
+
+.history-item {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #b2b2b2;
+  padding: 10px 0;
+  cursor: pointer;
+
+  &:hover {
+    .history-title {
+      text-decoration: underline;
+    }
+  }
+
+  &:active {
+    .history-title {
+      text-decoration: none;
+    }
+  }
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.history-title {
+  float: left;
+  font-size: 16px;
+  width: 100%;
+}
+
+.history-author,
+.history-genre {
+  float: left;
+  font-size: 15px;
+  margin: 3px 0 0 0;
+  color: #222;
+}
+
+.history-genre {
+  float: right;
+}

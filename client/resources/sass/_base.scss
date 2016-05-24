@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #222;
+  color: #fff;
+}
+
+.no-select {
+  user-select: none;
+}
+
+body {
+  //background: url(../img/pattern.png) #1e1f42;
+  background: url(../img/pattern.png) #d59657;
+  overflow: hidden;
+  font-family: 'Slabo 27px', serif;
+}
