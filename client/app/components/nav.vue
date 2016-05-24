@@ -75,6 +75,10 @@
 
     ready: function() {
       let savedVolume = localStorage.getItem('user-volume');
+      if(savedVolume == null) {
+        savedVolume = .75;
+      }
+
       let slider = document.getElementById('volume');
 
       noUiSlider.create(slider, {
