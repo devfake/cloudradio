@@ -9,7 +9,7 @@
       <span class="nav-item" :class="{'active': subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
 
       <div class="music-controls">
-        <svg @click="prevTrack()" class="last-btn" height="60px" width="45px" viewBox="-60 -35 200 140">
+        <svg @click="initPreviousTrack()" class="last-btn" height="60px" width="45px" viewBox="-60 -35 200 140">
           <path d="M0,44c0,1.396,1.398,2.395,1.398,2.395L38.71,71.146c2.862,1.91,5.21,0.504,5.21-3.123V19.975
 			c0-3.626-2.348-5.03-5.21-3.122L1.398,41.604C1.398,41.604,0,42.604,0,44z M45.379,44c0,1.396,1.396,2.395,1.396,2.395
 			l36.016,24.752C85.654,73.057,88,71.65,88,68.023V19.975c0-3.626-2.346-5.03-5.209-3.122L46.775,41.604
@@ -50,7 +50,7 @@
 
   import SubNavigation from './Subnav.vue';
   import noUiSlider from 'nouislider';
-  import { initCurrentTrack, playPause, changeSubNav, changeRepeat, changeVolumeBy } from '../store/actions';
+  import { initCurrentTrack, playPause, changeSubNav, changeRepeat, changeVolumeBy, initPreviousTrack } from '../store/actions';
 
   export default {
     vuex: {
@@ -65,7 +65,8 @@
         playPause,
         changeSubNav,
         changeRepeat,
-        changeVolumeBy
+        changeVolumeBy,
+        initPreviousTrack
       }
     },
 
