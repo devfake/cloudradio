@@ -8,7 +8,8 @@ It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuej
 ### ToDo
 
 * Repeat-Button
-* More caching
+* Improve caching
 * Sort charts by `trending` or `top`
 * Reponsive version
 * Other colors
+* Safari is crashing
