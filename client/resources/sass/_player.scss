@@ -1,10 +1,17 @@
-.svg-wrap svg {
-  position: absolute;
+.svg-wrap {
   padding: 40vh 0 0 0;
+  position: absolute;
   left: -50%;
   width: 100%;
-  z-index: 100;
-  /*height: calc(100% - 31px);*/
   height: 100%;
+  z-index: 100;
   transform: translateX(50%);
+
+  svg {
+    position: absolute;
+    left: -50%;
+    width: 100%;
+    height: calc(100% - 40vh);
+    transform: translateX(50%);
+  }
 }
