@@ -6,7 +6,7 @@
         cloudradioo is a web app that plays randomly all top 50 songs from the <a href="https://soundcloud.com" target="_blank">soundcloud</a> charts. You will discover your new favorite song!
 
         <br><br>
-        You can pause / replay by pressing the <code>space</code> key and <code>&#9668;</code> or <code>&#9658;</code> for previous / next random track. <br> Press <code>&#9650;</code> or <code>&#9660;</code> to increase / decrase volume. <br> Press <code>esc</code> to close this window.
+        You can pause / replay by pressing the <code>space</code> key and <code>&#9668;</code> / <code>&#9658;</code> or <code>A</code> / <code>D</code> for previous / next random track. <br> Press <code>&#9650;</code> / <code>&#9660;</code> or <code>W</code> / <code>S</code> to increase / decrase volume. <br> Press <code>esc</code> to close this window.
 
         <br><br>
         You also can filter your music taste or see a history of your played tracks.

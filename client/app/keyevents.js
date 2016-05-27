@@ -7,10 +7,14 @@ const PLAY_PAUSE = 32;
 const CLOSE_SUB_NAV = 27;
 
 const NEXT_TRACK = 39;
+const NEXT_TRACK_SECOND = 65;
 const PREV_TRACK = 37;
+const PREV_TRACK_SECOND = 68;
 
 const VOLUME_HIGHER = 38;
+const VOLUME_HIGHER_SECOND = 87;
 const VOLUME_LOWER = 40;
+const VOLUME_LOWER_SECOND = 83;
 
 let keyEvents = new Vue({
   store,
@@ -33,18 +37,22 @@ let keyEvents = new Vue({
             break;
 
           case NEXT_TRACK:
+          case NEXT_TRACK_SECOND:
             this.initCurrentTrack();
             break;
 
           case PREV_TRACK:
+          case PREV_TRACK_SECOND:
             this.initPreviousTrack();
             break;
 
           case VOLUME_HIGHER:
+          case VOLUME_HIGHER_SECOND:
             store.dispatch('CHANGE_VOLUME', 'increase');
             break;
 
           case VOLUME_LOWER:
+          case VOLUME_LOWER_SECOND:
             store.dispatch('CHANGE_VOLUME', 'decrease');
             break;
 
