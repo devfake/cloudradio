@@ -8,7 +8,19 @@ export function initUserFilters({dispatch}) {
 export function changeFilter(store, key, value) {
   store.dispatch('CHANGE_FILTER', key, value);
 
-  this.$http.get('api/change-filter', {filters: store.state.filter.userFilters}).then(value => {
+  callChangeFilter(store, this);
+}
+
+export function toggleAllFilters(store) {
+  store.state.filter.toggleAll = ! store.state.filter.toggleAll;
+  store.state.filter.userFilters = store.state.filter.toggleAll ? store.state.filter.allGenres : {};
+  store.dispatch('SET_STORAGE');
+
+  callChangeFilter(store, this);
+}
+
+function callChangeFilter(store, self) {
+  self.$http.get('api/change-filter', {filters: store.state.filter.userFilters}).then(value => {
     store.dispatch('INIT_ALL_TRACKS', value.data);
     store.dispatch('RESET_PLAYING_INDEX');
   });

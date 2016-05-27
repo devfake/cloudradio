@@ -18,11 +18,12 @@
 
     <div class="option-elements" :class="{'active': subNav === 'filter'}">
       <h4>Filter Your Taste</h4>
-      <!--div class="filter-divider no-select">
-        <input type="radio" value="top" name="sort" id="top"><label for="top">Top</label>
-        <input type="radio" value="trending" name="sort" id="trending"><label for="trending">Trending</label>
+      <div class="filter-divider no-select">
+        <!--input type="radio" value="top" name="sort" id="top"><label for="top">Top</label>
+        <input type="radio" value="trending" name="sort" id="trending"><label for="trending">Trending</label-->
+        <input type="checkbox" id="toggleAll" :checked="toggleAll" @change="toggleAllFilters()"><label for="toggleAll">Toggle All</label>
       </div>
-      <span class="divider"></span-->
+      <span class="divider"></span>
       <div class="filter-divider no-select" v-for="genre in allGenres">
         <input type="checkbox" id="{{ genre }}" :checked="checkForFilter($key)" @change="changeFilter($key, genre)"><label for="{{ genre }}">{{ $key }}</label>
       </div>
@@ -51,7 +52,7 @@
 
 <script type="text/babel">
 
-  import { initTrackFromHistory, changeFilter, clearHistory } from '../store/actions';
+  import { initTrackFromHistory, changeFilter, clearHistory, toggleAllFilters } from '../store/actions';
 
   export default {
     vuex: {
@@ -59,12 +60,14 @@
         subNav: ({ options }) => options.subNav,
         history: ({ player }) => player.history,
         allGenres: ({ filter }) => filter.allGenres,
-        userFilters: ({ filter }) => filter.userFilters
+        userFilters: ({ filter }) => filter.userFilters,
+        toggleAll: ({ filter }) => filter.toggleAll
       },
       actions: {
         initTrackFromHistory,
         clearHistory,
-        changeFilter
+        changeFilter,
+        toggleAllFilters
       }
     },
 

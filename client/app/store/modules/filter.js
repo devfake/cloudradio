@@ -1,6 +1,7 @@
 const state = {
   userFilters: [],
-  allGenres: []
+  allGenres: [],
+  toggleAll: true
 };
 
 const mutations = {
@@ -9,14 +10,20 @@ const mutations = {
 
     if(savedFilters === null) {
       state.userFilters = state.allGenres;
-      localStorage.setItem('user-filters', JSON.stringify(state.userFilters));
+      setStorage(state.userFilters);
     } else {
       state.userFilters = JSON.parse(savedFilters);
     }
+
+    state.toggleAll = JSON.stringify(state.userFilters) === JSON.stringify(state.allGenres);
   },
 
   INIT_ALL_GENRES(state, genres) {
     state.allGenres = genres;
+  },
+
+  SET_STORAGE(state) {
+    setStorage(state.userFilters);
   },
 
   CHANGE_FILTER(state, key, value) {
@@ -26,8 +33,12 @@ const mutations = {
       state.userFilters[key] = value;
     }
 
-    localStorage.setItem('user-filters', JSON.stringify(state.userFilters));
+    setStorage(state.userFilters);
   }
 };
+
+function setStorage(userFilters) {
+  localStorage.setItem('user-filters', JSON.stringify(userFilters));
+}
 
 export default {state, mutations}
