@@ -7,6 +7,14 @@
       <span class="nav-item" :class="{'active': subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
       <span class="nav-item" :class="{'active': subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
       <span class="nav-item" :class="{'active': subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
+      <span class="nav-item">
+        <span class="attribution">
+          <a target="_blank" href="https://soundcloud.com/"><img src="/assets/img/powered_by_soundcloud.png"></a>
+        </span>
+      </span>
+
+
+
 
       <div class="music-controls">
         <svg @click="initPreviousTrack()" class="last-btn" height="60px" width="45px" viewBox="-60 -35 200 140">
