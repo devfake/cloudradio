@@ -25,6 +25,10 @@ nav {
     position: relative;
   }
 
+  > span.attribution {
+    padding-top: 11px;
+  }
+
   &:hover {
     color: #fff;
   }
