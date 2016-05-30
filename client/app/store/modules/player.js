@@ -104,9 +104,9 @@ const mutations = {
     let slider = document.getElementById('volume');
 
     if(type === 'increase') {
-      state.audio.volume = (volume + .2) > 1 ? 1 : volume + .2;
+      state.audio.volume = (volume + .1) > 1 ? 1 : volume + .1;
     } else if(type == 'decrease') {
-      state.audio.volume = (volume - .2) < 0 ? 0 : volume - .2;
+      state.audio.volume = (volume - .1) < 0 ? 0 : volume - .1;
     }
 
     localStorage.setItem('user-volume', state.audio.volume);
