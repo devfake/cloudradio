@@ -4,9 +4,9 @@
       {{ currentTrack.title }}
     </a>
 
-    <h3 class="author">
-      {{ currentTrack.username }}
-    </h3>
+    <h3 class="author">{{ currentTrack.username }}</h3>
+
+    <span class="genre">{{ currentTrack.genre }}</span>
   </header>
 </template>
 
