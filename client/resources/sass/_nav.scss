@@ -5,7 +5,6 @@ nav {
   bottom: 0;
   height: 60px;
   width: 100%;
-  overflow: hidden;
 }
 
 .nav-item {
@@ -45,10 +44,21 @@ nav {
 
 .volume-wrap {
   width: 170px;
-  height: 150px;
   position: relative;
   z-index: 1000;
   margin: 0 30px 0 0;
+}
+
+.find-on-youtube {
+  position: absolute;
+  right: 30px;
+  top: -60px;
+  opacity: .75;
+  z-index: 600;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .noUi-target {

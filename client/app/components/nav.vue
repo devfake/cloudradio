@@ -9,7 +9,7 @@
       <span class="nav-item" :class="{'active': subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
       <span class="nav-item">
         <span class="attribution">
-          <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png"></a>
+          <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
         </span>
       </span>
 
@@ -47,6 +47,9 @@
 
       <!--span class="nav-item second-nav-item" :class="{'active': repeat}" @click="changeRepeat()"><span>repeat</span></span-->
 
+      <a href="https://www.youtube.com/results?search_query={{ currentTrack.username + ' ' + currentTrack.title }}" target="_blank" class="find-on-youtube" title="Find Track On Youtube">
+        <img src="assets/img/youtube.png" width="58" height="24" alt="Find on YouTube">
+      </a>
     </div>
   </nav>
 </template>
@@ -63,7 +66,8 @@
         audio: ({ player }) => player.audio,
         playing: ({ player }) => player.playing,
         subNav: ({ options }) => options.subNav,
-        repeat: ({ options }) => options.repeat
+        repeat: ({ options }) => options.repeat,
+        currentTrack: ({ player }) => player.currentTrack
       },
       actions: {
         initCurrentTrack,
