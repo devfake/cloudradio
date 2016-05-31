@@ -66,6 +66,7 @@ let player = new Vue({
 
     startPlaying: function() {
       let title = this.currentTrack.title;
+      let author = this.currentTrack.username;
       this.duration = this.currentTrack.duration;
 
       // Close audio context for Firefox:
@@ -76,7 +77,7 @@ let player = new Vue({
       }
 
       store.dispatch('SET_DURATION', this.duration);
-      store.dispatch('CHANGE_TITLE', title);
+      store.dispatch('CHANGE_TITLE', title + ' - ' + author);
 
       this.initAudioContext();
     },
