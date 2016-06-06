@@ -14,5 +14,5 @@ elixir(function(mix) {
 
   mix.browserify('./app/app.js');
 
-  //mix.task('browserify', './app/**/**.js');
+  mix.task('browserify', './app/**/**.vue');
 });
