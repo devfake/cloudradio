@@ -1,6 +1,6 @@
 <template>
-  <section class="subnav" :class="{'active': subNav}">
-    <div class="option-elements" :class="{'active': subNav === 'cloudradioo'}">
+  <section class="subnav" :class="{active: subNav}">
+    <div class="option-elements" :class="{active: subNav === 'cloudradioo'}">
       <h4>Discover New Music</h4>
       <p>
         cloudradioo is a web app that plays randomly all top 50 songs from the <a href="https://soundcloud.com" target="_blank">soundcloud</a> charts. You will discover your new favorite song!
@@ -16,7 +16,7 @@
       </p>
     </div>
 
-    <div class="option-elements" :class="{'active': subNav === 'filter'}">
+    <div class="option-elements" :class="{active: subNav === 'filter'}">
       <h4>Filter Your Taste</h4>
       <div class="filter-divider no-select">
         <!--input type="radio" value="top" name="sort" id="top"><label for="top">Top</label>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="option-elements" :class="{'active': subNav === 'history'}">
+    <div class="option-elements" :class="{active: subNav === 'history'}">
       <h4>
         History Of Your Tracks
         <span class="clear-history" @click="clearHistory()">Clear History</span>

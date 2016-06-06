@@ -4,9 +4,9 @@
   <nav>
     <div class="nav-elements no-select">
       <!-- todo: lists -->
-      <span class="nav-item" :class="{'active': subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
-      <span class="nav-item" :class="{'active': subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
-      <span class="nav-item" :class="{'active': subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
+      <span class="nav-item" :class="{active: subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
+      <span class="nav-item" :class="{active: subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
+      <span class="nav-item" :class="{active: subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
       <span class="nav-item">
         <span class="attribution">
           <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
