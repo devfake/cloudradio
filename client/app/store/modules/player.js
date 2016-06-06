@@ -133,6 +133,18 @@ const mutations = {
     state.countPrevious++;
   },
 
+  // Recreate structure for currentTrack from shared track.
+  INIT_SHARED_TRACK(state, data) {
+    state.currentTrack = {
+      duration: data.duration,
+      genre: data.genre,
+      id: data.id,
+      permalink_url: data.permalink_url,
+      title: data.title,
+      username: data.user.username
+    }
+  },
+
   INIT_CURRENT_TRACK(state) {
     state.playing = true;
     state.countPrevious = 0;

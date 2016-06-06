@@ -4,7 +4,7 @@
 
   class SiteController extends Controller {
 
-    public function app()
+    public function app($sharedID = null)
     {
       return view('app');
     }

@@ -19,7 +19,8 @@ let player = new Vue({
       svg: null,
       isFirefox: typeof InstallTrigger !== 'undefined',
       started: false,
-      audioSrc: null
+      audioSrc: null,
+      sharedTrack: null
     }
   },
 
@@ -28,6 +29,7 @@ let player = new Vue({
       currentTrack: ({ player }) => player.currentTrack,
       currentPlayingIndex: ({ player }) => player.currentPlayingIndex,
       audio: ({ player }) => player.audio,
+      apiKey: ({ player }) => player.apiKey,
       userFilters: ({ filter }) => filter.userFilters
     },
     actions: {
@@ -40,6 +42,8 @@ let player = new Vue({
 
   methods: {
     start: function() {
+      this.parseURI();
+
       this.$http.get('api/all-genres').then(value => {
         store.dispatch('INIT_ALL_GENRES', value.data);
 
@@ -50,12 +54,30 @@ let player = new Vue({
       });
     },
 
+    parseURI: function() {
+      let uri = window.location.pathname;
+
+      // If we develop locally with pathname like 'cloudradioo/public',
+      // we need to split the pathname to get the right shared track id.
+      let split = uri.split('/');
+
+      this.sharedTrack = split[split.length - 1];
+    },
+
     initAllTracks: function() {
       this.$http.get('api/songs', {filters: this.userFilters}).then(value => {
         store.dispatch('INIT_ALL_TRACKS', value.data);
-        store.dispatch('INIT_CURRENT_TRACK');
 
-        this.initPlayer();
+        // Is there an shared uri? Fetch the track and store them as currentTrack.
+        if(this.sharedTrack) {
+          this.$http.get(`http://api.soundcloud.com/tracks/${this.sharedTrack}?client_id=${this.apiKey}`).then(value => {
+            store.dispatch('INIT_SHARED_TRACK', value.data);
+            this.initPlayer();
+          });
+        } else {
+          store.dispatch('INIT_CURRENT_TRACK');
+          this.initPlayer();
+        }
       });
     },
 

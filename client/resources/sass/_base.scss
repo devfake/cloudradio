@@ -10,10 +10,8 @@
 }
 
 a { border: 0; outline: none; text-decoration: none; }
-
-.no-select {
-  user-select: none;
-}
+input { outline: none; }
+.no-select { user-select: none; }
 
 body {
   //background: url(../img/pattern.png) #1e1f42;

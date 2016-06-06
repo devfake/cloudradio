@@ -1,6 +1,6 @@
 <?php
 
-  Route::get('/', 'SiteController@app');
+  Route::get('/{sharedID?}', 'SiteController@app');
 
   Route::group(['prefix' => 'api'], function() {
 
