@@ -73,6 +73,8 @@ let player = new Vue({
           this.$http.get(`http://api.soundcloud.com/tracks/${this.sharedTrack}?client_id=${this.apiKey}`).then(value => {
             store.dispatch('INIT_SHARED_TRACK', value.data);
             this.initPlayer();
+          }, error => {
+            window.location.href = document.querySelector('.base-uri').content;
           });
         } else {
           store.dispatch('INIT_CURRENT_TRACK');

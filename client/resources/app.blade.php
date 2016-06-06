@@ -3,6 +3,7 @@
 <head>
 
   <meta charset="utf-8">
+  <meta class="base-uri" content="{{ url('/') }}">
   <meta name="description" content="cloudradioo is a service that plays randomly all top 50 songs from the soundcloud charts. You will discover your new favorite song! ;)">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
