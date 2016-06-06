@@ -35,7 +35,6 @@ There is an default 6-hour cache for access all songs from the charts. Set a Cro
 
 * Repeat-Button
 * Buffer-Icon
-* Share Tracklinks
 * Improve caching
 * Sort charts by `trending` or `top`
 * Reponsive version
