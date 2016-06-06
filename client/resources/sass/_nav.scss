@@ -49,18 +49,6 @@ nav {
   margin: 0 30px 0 0;
 }
 
-.find-on-youtube {
-  position: absolute;
-  right: 30px;
-  top: -60px;
-  opacity: .75;
-  z-index: 600;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 .noUi-target {
   height: 10px;
   border: 0;
@@ -250,7 +238,8 @@ code {
   cursor: pointer;
 
   &:hover {
-    background: #d59657;
+    //background: #d59657;
+    background: #8c585e;
   }
 
   &:active {
