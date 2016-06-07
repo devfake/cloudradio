@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Resource from 'vue-resource';
 
-import Progress from './components/Progress.vue';
-import CloudradiooHeader from './components/Header.vue';
-import Navigation from './components/Nav.vue';
+import Progress from './components/progress.vue';
+import CloudradiooHeader from './components/header.vue';
+import Navigation from './components/nav.vue';
 
 import Player from './player';
 import KeyEvents from './keyevents';

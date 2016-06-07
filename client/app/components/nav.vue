@@ -52,7 +52,7 @@
 
 <script type="text/babel">
 
-  import SubNavigation from './Subnav.vue';
+  import SubNavigation from './subnav.vue';
   import noUiSlider from 'nouislider';
   import { initCurrentTrack, playPause, changeSubNav, changeRepeat, changeVolumeBy, initPreviousTrack } from '../store/actions';
 
