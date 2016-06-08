@@ -4,9 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bd08640d27e12e97ac48ae6096c3fbfa",
-    "content-hash": "27a36a3d0dc31812f5f508e57b8d01fd",
+    "hash": "3104ef2412b7b0e40a01d10da7a15a54",
+    "content-hash": "b488c073fc0335b52977fae3c52b93e6",
     "packages": [
+        {
+            "name": "barryvdh/laravel-cors",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-cors.git",
+                "reference": "39975d7505757488f982ca132bcd02c704792fd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/39975d7505757488f982ca132bcd02c704792fd8",
+                "reference": "39975d7505757488f982ca132bcd02c704792fd8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.1.x|5.2.x",
+                "php": ">=5.5.9",
+                "symfony/http-foundation": "~2.7|~3.0",
+                "symfony/http-kernel": "~2.7|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Cors\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Adds CORS (Cross-Origin Resource Sharing) headers support in your Laravel application",
+            "keywords": [
+                "api",
+                "cors",
+                "crossdomain",
+                "laravel"
+            ],
+            "time": "2016-02-11 18:38:09"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",

@@ -2,7 +2,7 @@
 
   Route::get('/{sharedID?}', 'SiteController@app');
 
-  Route::group(['prefix' => 'api'], function() {
+  Route::group(['prefix' => 'api', 'middleware' => 'cors'], function() {
 
     Route::get('/all-genres', 'ApiController@allGenres');
     Route::get('/all-songs', 'ApiController@allSongs');
