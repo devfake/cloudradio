@@ -7,6 +7,8 @@ cloudradioo
 
 It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuejs.org) (with [Vuex](https://github.com/vuejs/vuex)).
 
+**NEW:** [Electron desktop app](https://github.com/devfake/cloudradioo-app)
+
 ### Requirements
 
 * PHP 5.5.9+
