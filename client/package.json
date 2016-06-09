@@ -8,6 +8,7 @@
     "vuex": "^0.6.3"
   },
   "devDependencies": {
+    "d3": "^3.5.17",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-2",
     "laravel-elixir-vueify": "^1.0.3"

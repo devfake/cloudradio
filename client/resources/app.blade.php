@@ -25,7 +25,6 @@
 
   </div>
 
-  <script src="{{ url('assets/js/d3.min.js') }}"></script>
   <script src="{{ url('assets/js/app.js') }}"></script>
 </body>
 </html>
