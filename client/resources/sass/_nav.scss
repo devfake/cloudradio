@@ -4,6 +4,7 @@ nav {
   left: 0;
   bottom: 0;
   height: 60px;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -38,8 +39,65 @@ nav {
   }
 }
 
+.main-navigation {
+  float: left;
+
+  @include media(medium) {
+    opacity: 0;
+    top: 100%;
+    width: 100%;
+    background: #222;
+    z-index: 1001;
+    position: absolute;
+    transition: opacity .2s ease-in-out 0s, top .2s ease-in-out 0s;
+
+    &.active {
+      opacity: 1;
+      top: 0;
+    }
+  }
+}
+
 .second-nav-item {
   float: right;
+}
+
+.hidden-menu {
+  position: relative;
+  z-index: 1000;
+  float: left;
+  display: none;
+
+  @include media(medium) {
+    display: block;
+  }
+
+  svg {
+    fill: rgba(255, 255, 255, .2);
+    cursor: pointer;
+    transition: fill 0.2s ease-in-out 0s;
+    margin: 0 0 0 10px;
+
+    &:hover {
+      fill: #fff;
+    }
+  }
+}
+
+.close-hidden-menu {
+  display: none;
+  fill: rgba(255, 255, 255, 0.2);
+  transition: fill 0.2s ease-in-out 0s;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+
+  &:hover {
+    fill: #fff;
+  }
+
+  @include media(medium) {
+    display: block;
+  }
 }
 
 .volume-wrap {
@@ -261,6 +319,10 @@ code {
   visibility: hidden;
   color: #fff;
 
+  @include media(small) {
+    width: 100%;
+  }
+
   &.active {
     opacity: 1;
     left: 0;
@@ -270,7 +332,7 @@ code {
 
 .divider {
   float: left;
-  width: 300px;
+  width: 100%;
   margin: 20px 0;
   height: 2px;
   background: #222;

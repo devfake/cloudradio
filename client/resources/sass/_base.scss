@@ -19,3 +19,15 @@ body {
   overflow: hidden;
   font-family: 'Slabo 27px', serif;
 }
+
+@mixin media($point) {
+  @if $point == medium {
+    @media (max-width: 1100px) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 650px) { @content; }
+  }
+  @else {
+    @media (max-width: $point)  { @content; }
+  }
+}
