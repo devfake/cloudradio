@@ -96,6 +96,8 @@
 
     methods: {
       toggleMainMenu: function() {
+        this.openMenu && this.changeSubNav();
+
         this.openMenu = ! this.openMenu;
       }
     },
