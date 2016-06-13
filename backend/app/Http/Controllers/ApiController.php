@@ -22,11 +22,11 @@
 
     /**
      * Get all user filtered songs.
-     * Cache is set for 6 hours. (todo)
+     * Cache is set forever, until default cache for all songs is cleared.
      */
     public function songs()
     {
-      //$songs = Cache::remember('filtered-songs', 360, function() {
+      $songs = Cache::rememberForever('filtered-songs', function() {
         $filters = Request::input('filters');
         $allSongs = collect($this->allSongs());
 
@@ -36,13 +36,13 @@
           $filters = [array_rand($genres) => 'random'];
         }
 
-        // Get always a random list.
         return $allSongs->filter(function($value) use ($filters) {
           return array_key_exists($value['genre'], $filters);
-        })->shuffle();
-      //});
+        });
+      });
 
-      //return $songs->shuffle();
+      // Get always a random list.
+      return $songs->shuffle();
     }
 
     /**
@@ -52,6 +52,7 @@
     public function allSongs()
     {
       $songs = Cache::remember('all-songs', 360, function() {
+        Cache::forget('filtered-songs');
         $return = [];
 
         foreach(json_decode($this->allGenres()) as $key => $genre) {
@@ -86,7 +87,7 @@
      */
     public function changeFilter()
     {
-      //Cache::forget('filtered-songs');
+      Cache::forget('filtered-songs');
       
       return $this->songs();
     }
