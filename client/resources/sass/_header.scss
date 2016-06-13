@@ -64,12 +64,20 @@ header {
   font-size: 34px;
   text-decoration: none;
   font-weight: normal;
+
+  @include media(small) {
+    font-size: 26px;
+  }
 }
 
 .author {
   color: #222;
   font-size: 22px;
   margin: 10px 0 0 0;
+
+  @include media(small) {
+    font-size: 20px;
+  }
 }
 
 .genre {
@@ -77,4 +85,8 @@ header {
   display: block;
   margin: 20px 0;
   font-size: 18px;
+
+  @include media(small) {
+    font-size: 16px;
+  }
 }

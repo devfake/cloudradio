@@ -19,11 +19,16 @@
         <span class="nav-item" :class="{active: subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
         <span class="nav-item" :class="{active: subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
         <span class="nav-item" :class="{active: subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
-      <span class="nav-item">
-        <span class="attribution">
-          <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
+        <span class="nav-item">
+          <span class="attribution">
+            <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
+          </span>
         </span>
-      </span>
+        <span class="nav-item second-nav-item">
+          <div class="volume-wrap">
+            <div id="volume"></div>
+          </div>
+        </span>
       </div>
 
       <div class="music-controls">
@@ -51,12 +56,6 @@
 		S78.869,37.889,78.869,37.889z" />
         </svg>
       </div>
-
-      <span class="nav-item second-nav-item">
-        <div class="volume-wrap">
-          <div id="volume"></div>
-        </div>
-      </span>
 
       <!--span class="nav-item second-nav-item" :class="{'active': repeat}" @click="changeRepeat()"><span>repeat</span></span-->
     </div>

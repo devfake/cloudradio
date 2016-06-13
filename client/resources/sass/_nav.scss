@@ -23,10 +23,18 @@ nav {
     height: 60px;
     float: left;
     position: relative;
+
+    @include media(small) {
+      padding: 17px 10px;
+    }
   }
 
   > span.attribution {
     padding-top: 11px;
+
+    @include media(medium) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -41,11 +49,11 @@ nav {
 
 .main-navigation {
   float: left;
+  width: 100%;
 
   @include media(medium) {
     opacity: 0;
     top: 100%;
-    width: 100%;
     background: #222;
     z-index: 1001;
     position: absolute;
@@ -105,6 +113,10 @@ nav {
   position: relative;
   z-index: 1000;
   margin: 0 30px 0 0;
+
+  @include media(small) {
+    width: 80px;
+  }
 }
 
 .noUi-target {
