@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Resource from 'vue-resource';
 
-import Progress from './components/progress.vue';
-import CloudradiooHeader from './components/header.vue';
-import Navigation from './components/nav.vue';
+import progress from './components/progress.vue';
+import cloudradiooHeader from './components/header.vue';
+import navigation from './components/nav.vue';
 
 import Player from './player';
 import KeyEvents from './keyevents';
@@ -23,12 +23,12 @@ new Vue({
   store,
 
   components: {
-    progress: Progress,
-    cloudradiooHeader: CloudradiooHeader,
-    navigation: Navigation
+    progress,
+    cloudradiooHeader,
+    navigation
   },
 
-  ready: function() {
+  ready() {
     //localStorage.clear();
     this.$http.get('api/api-key').then(value => {
       store.dispatch('SET_API_KEY', value.data);

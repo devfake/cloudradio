@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 import store from './store';
-import {initCurrentTrack, initPreviousTrack} from './store/actions';
+import { initCurrentTrack, initPreviousTrack } from './store/actions';
 
 const PLAY_PAUSE = 32;
 const CLOSE_SUB_NAV = 27;
@@ -27,7 +27,7 @@ let keyEvents = new Vue({
   },
 
   methods: {
-    registerKeyEvents: function() {
+    registerKeyEvents() {
       window.onkeyup = event => {
         var key = event.keyCode ? event.keyCode : event.which;
 

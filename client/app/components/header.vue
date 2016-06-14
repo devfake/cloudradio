@@ -33,29 +33,29 @@
       }
     },
 
-    data: function() {
+    data() {
       return {
         showToolsOnStart: true,
         showShareTrack: false
       }
     },
 
-    ready: function() {
+    ready() {
       setTimeout(() => {
         this.showToolsOnStart = false;
       }, 2000);
     },
 
     methods: {
-      enableShareTrack: function() {
+      enableShareTrack() {
         this.showShareTrack = true;
 
-        setTimeout(function() {
+        setTimeout(() => {
           document.querySelector('.share-track').select();
         }, 0);
       },
 
-      disableShareTrack: function() {
+      disableShareTrack() {
         this.showShareTrack = false;
       }
     }
