@@ -1,5 +1,7 @@
 /backend/vendor
 /client/node_modules
+/client/tests/e2e/reports
+/client/selenium-debug.log
 /public/storage
 /backend/.env
 .idea

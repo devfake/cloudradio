@@ -1,6 +1,8 @@
 {
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "e2e": "./node_modules/.bin/nightwatch"
+  },
   "dependencies": {
     "nouislider": "^8.5.1",
     "vue": "^1.0.24",
@@ -8,9 +10,12 @@
     "vuex": "^0.6.3"
   },
   "devDependencies": {
+    "chromedriver": "^2.21.2",
     "d3": "^3.5.17",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-2",
-    "laravel-elixir-vueify": "^1.0.3"
+    "laravel-elixir-vueify": "^1.0.3",
+    "nightwatch": "^0.9.4",
+    "selenium-server": "^2.53.0"
   }
 }

@@ -3,11 +3,11 @@
     <div class="hidden-tools {{ showToolsOnStart ? 'active' : '' }} {{ showShareTrack ? 'show-share-track' : '' }}">
       <a :href="currentTrack.permalink_url" target="_blank">Soundcloud</a>
       <a href="https://www.youtube.com/results?search_query={{ currentTrack.username + ' ' + currentTrack.title }}" target="_blank">Youtube</a>
-      <a @click="enableShareTrack()">Share Track</a>
+      <a @click="enableShareTrack()" class="share-btn">Share Track</a>
 
       <div class="share-track-wrap">
         <input type="text" class="share-track" value="http://cloudradioo.com/{{ currentTrack.id }}" readonly>
-        <a @click="disableShareTrack()">Close</a>
+        <a @click="disableShareTrack()" class="close-btn">Close</a>
       </div>
     </div>
 
