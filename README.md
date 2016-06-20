@@ -1,4 +1,4 @@
-![cloudradioo](http://i.imgur.com/lf18DnW.jpg)
+![cloudradioo](http://i.imgur.com/DqF9ARE.png)
 
 cloudradioo
 ===============
