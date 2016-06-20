@@ -1,4 +1,4 @@
-{
+module.exports = {
   "src_folders": ["tests/e2e/specs"],
   "output_folder": "tests/e2e/reports",
   "custom_assertions_path": "",
@@ -9,13 +9,13 @@
     "host": "127.0.0.1",
     "port": 4444,
     "cli_args": {
-      "webdriver.chrome.driver": "node_modules/chromedriver/bin/chromedriver"
+      "webdriver.chrome.driver": require('chromedriver').path
     }
   },
 
   "test_settings": {
     "default": {
-      "launch_url" : "http://localhost:8888/radioo_new/public/",
+      "launch_url" : "http://localhost:8888/cloudradioo/public/",
       "selenium_port": 4444,
       "selenium_host": "localhost",
       "silent": true,
