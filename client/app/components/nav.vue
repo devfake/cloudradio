@@ -16,9 +16,9 @@
         <svg class="nav-item close-hidden-menu" @click="toggleMainMenu()" height="60px" width="45px" viewBox="-70 -95 340 360">
           <path d="M107.888,96.142l80.916-80.916c3.48-3.48,3.48-8.701,0-12.181s-8.701-3.48-12.181,0L95.707,83.961L14.791,3.045   c-3.48-3.48-8.701-3.48-12.181,0s-3.48,8.701,0,12.181l80.915,80.916L2.61,177.057c-3.48,3.48-3.48,8.701,0,12.181   c1.74,1.74,5.22,1.74,6.96,1.74s5.22,0,5.22-1.74l80.916-80.916l80.916,80.916c1.74,1.74,5.22,1.74,6.96,1.74   c1.74,0,5.22,0,5.22-1.74c3.48-3.48,3.48-8.701,0-12.181L107.888,96.142z"/>
         </svg>
-        <span class="nav-item" :class="{active: subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
-        <span class="nav-item" :class="{active: subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
-        <span class="nav-item" :class="{active: subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
+        <span class="nav-item nav-cloudradioo" :class="{active: subNav === 'cloudradioo'}" @click="changeSubNav('cloudradioo')"><span>cloudradioo</span></span>
+        <span class="nav-item nav-filter" :class="{active: subNav === 'filter'}" @click="changeSubNav('filter')"><span>filter</span></span>
+        <span class="nav-item nav-history" :class="{active: subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
         <span class="nav-item">
           <span class="attribution">
             <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
