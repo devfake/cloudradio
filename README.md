@@ -27,7 +27,7 @@ It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuej
 ##### Development
 
 * Run `npm install` in your `/client` folder.
-* Run `gulp watch` or `gulp watch --production` and make your work.
+* Run `webpack`, or `webpack -p` for production build. You can watch your assets with `webpack -w`.
 
 ### Misc
 

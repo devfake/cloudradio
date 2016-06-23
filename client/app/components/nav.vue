@@ -21,7 +21,7 @@
         <span class="nav-item nav-history" :class="{active: subNav === 'history'}" @click="changeSubNav('history')"><span>history</span></span>
         <span class="nav-item">
           <span class="attribution">
-            <a target="_blank" href="https://soundcloud.com/"><img src="assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
+            <a target="_blank" href="https://soundcloud.com/"><img src="../../../public/assets/img/powered_by_soundcloud.png" width="104" height="32" alt="powered by: SOUNDCLOUD"></a>
           </span>
         </span>
         <span class="nav-item second-nav-item">

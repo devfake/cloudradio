@@ -1,3 +1,5 @@
+require('../resources/sass/app.scss');
+
 import Vue from 'vue';
 import Resource from 'vue-resource';
 
