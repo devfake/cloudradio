@@ -21,7 +21,6 @@ module.exports = {
   },
   output: {
     path: path.resolve('../public/assets/js'),
-    // Make sure that the path (without host) is the same as your CLIENT_URL in /backend/.env
     publicPath: 'http://localhost:8080/' + assets_path,
     filename: 'app.js'
   },

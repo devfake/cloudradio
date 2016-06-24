@@ -30,7 +30,7 @@ It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuej
 * Make sure you have installed `webpack` and `webpack-dev-server` globally.
 * Run `webpack`, or `webpack -p` for production build. You can watch your assets with `webpack -w`.
 
-* To work with HMR, you need to set `CLIENT_URL`  in `/backend/.env` (e.g. `http://localhost:8888/cloudradioo/public/` on MAMP or `cloudradioo.dev/` on homestead) and the `ASSETS_PATH` (e.g. `cloudradioo/public/assets/js/` or `cloudradioo.dev/assets/js`).
+* To work with HMR, you need to set `CLIENT_URL`  in `/backend/.env` (e.g. `http://localhost:8888/cloudradioo/public/` on MAMP or `cloudradioo.dev/` on homestead) and the `ASSETS_PATH` (e.g. `cloudradioo/public/assets/js/` or `cloudradioo.dev/assets/js/`).
 
 ### Misc
 
