@@ -1,17 +1,29 @@
 // todo
 // - extract css
-// - HOT
 // - production env
 
-let webpack = require('webpack');
+var webpack = require('webpack');
+var path = require('path');
+var env = require('node-env-file');
+
+env(path.resolve('../backend/.env'));
+var client_url = process.env.CLIENT_URL;
+var assets_path = process.env.ASSETS_PATH;
 
 module.exports = {
   entry: {
-    app: './app/app.js',
+    app: [
+      'webpack/hot/dev-server',
+      'webpack-dev-server/client?http://localhost:8080',
+      './app/app.js'
+    ],
     vendor: ['vue', 'vue-resource', 'vuex', 'd3']
   },
   output: {
-    filename: '../public/assets/js/app.js'
+    path: path.resolve('../public/assets/js'),
+    // Make sure that the path (without host) is the same as your CLIENT_URL in /backend/.env
+    publicPath: 'http://localhost:8080/' + assets_path,
+    filename: 'app.js'
   },
   module: {
     loaders: [
@@ -39,7 +51,17 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true,
+    hot: true,
+    inline: true,
+    proxy: {
+      "*": client_url
+    }
+  },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', '../public/assets/js/vendor.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
