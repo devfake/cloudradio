@@ -5,6 +5,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var env = require('node-env-file');
+var autoprefixer = require('autoprefixer');
 
 env(path.resolve('../backend/.env'));
 var client_url = process.env.CLIENT_URL;
@@ -46,9 +47,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!postcss!sass'
       }
     ]
+  },
+  postcss: function () {
+    return [autoprefixer];
   },
   devServer: {
     historyApiFallback: true,
