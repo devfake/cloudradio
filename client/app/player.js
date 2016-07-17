@@ -5,6 +5,7 @@ import d3 from 'd3';
 import { initCurrentTrack, initUserFilters, initUserHistory, initVolume } from './store/actions';
 
 import store from './store';
+import notification from './notification'
 
 Vue.use(Resource);
 
@@ -86,6 +87,7 @@ let player = new Vue({
 
     initPlayer() {
       store.dispatch('CREATE_AUDIO', this.currentTrack.id);
+      notification.songPlayed();
       this.registerEventListener();
     },
 
