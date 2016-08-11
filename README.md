@@ -27,10 +27,8 @@ It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuej
 ##### Development
 
 * Run `npm install` in your `/client` folder.
-* Make sure you have installed `webpack` and `webpack-dev-server` globally.
-* Run `webpack`, or `webpack -p` for production build. You can watch your assets with `webpack -w`.
-
-* To work with HMR, you need to set `CLIENT_URL`  in `/backend/.env` (e.g. `http://localhost:8888/cloudradioo/public/` on MAMP or `cloudradioo.dev/` on homestead) and the `ASSETS_PATH` (e.g. `cloudradioo/public/assets/js/` or `cloudradioo.dev/assets/js/`).
+* Make sure you have installed `webpack` globally.
+* Run `npm run dev` or  `npm run build`.
 
 ### Misc
 
@@ -41,5 +39,4 @@ There is an default 6-hour cache for access all songs from the charts. Set a Cro
 * Repeat-Button
 * Buffer-Icon
 * Sort charts by `trending` or `top`
-* Other colors
 * Safari is crashing

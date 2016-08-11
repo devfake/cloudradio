@@ -10,7 +10,7 @@
   <title>cloudradioo | Discover New Music</title>
 
   <link href="{{ url('assets/favicon.ico?v=1') }}" rel="icon" type="image/x-icon">
-  {{-- <link href="{{ url('assets/css/app.css') }}" rel="stylesheet"> --}}
+  <link href="{{ url('assets/css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
