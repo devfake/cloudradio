@@ -4,7 +4,8 @@ const state = {
   currentTrack: [],
   currentPlayingIndex: 0,
   audio: null,
-  playing: true,
+  audioCtx: null,
+  playing: false,
   apiKey: null,
   lastTrackIndex: null,
   countPrevious: 0,
@@ -55,6 +56,10 @@ const mutations = {
   },
 
   SEEK_TRACK(state, duration) {
+    if(state.audioCtx === null) {
+      state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    
     state.playing = true;
     state.audio.currentTime = duration;
   },
@@ -64,6 +69,10 @@ const mutations = {
   },
 
   PLAY_PAUSE(state) {
+    if(state.audioCtx === null) {
+      state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
     if(state.playing) {
       state.audio.pause();
     } else {
@@ -145,8 +154,17 @@ const mutations = {
     }
   },
 
-  INIT_CURRENT_TRACK(state) {
-    state.playing = true;
+  CREATE_NEW_AUDIO_CONTEXT(state) {
+    state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  },
+
+  UNSET_AUDIO_CONTEXT(state) {
+    state.audioCtx.close();
+    state.audioCtx = null;
+  },
+
+  INIT_CURRENT_TRACK(state, play = true) {
+    state.playing = play;
     state.countPrevious = 0;
 
     // Was last track played?

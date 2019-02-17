@@ -4,7 +4,8 @@
     "install:test": "npm install nightwatch selenium-server chromedriver",
     "e2e": "./node_modules/.bin/nightwatch",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "dev": "webpack -w"
+    "dev": "webpack -w",
+    "h": "webpack"
   },
   "dependencies": {
     "nouislider": "^8.5.1",
@@ -24,8 +25,8 @@
     "d3": "^3.5.17",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
-    "node-sass": "^3.8.0",
     "postcss-loader": "^0.9.1",
+    "node-sass": "^4.11.0",
     "sass-loader": "^3.2.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

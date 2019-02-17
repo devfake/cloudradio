@@ -1,6 +1,5 @@
 <template>
   <sub-navigation></sub-navigation>
-
   <nav>
     <div class="nav-elements no-select">
       <!-- todo: lists -->

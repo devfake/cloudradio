@@ -14,7 +14,7 @@ let player = new Vue({
 
   data() {
     return {
-      audioCtx: new (window.AudioContext || window.webkitAudioContext)(),
+      // audioCtx: null,
       duration: null,
       analyser: null,
       frequencyData: null,
@@ -31,6 +31,7 @@ let player = new Vue({
       currentTrack: ({ player }) => player.currentTrack,
       currentPlayingIndex: ({ player }) => player.currentPlayingIndex,
       audio: ({ player }) => player.audio,
+      audioCtx: ({ player }) => player.audioCtx,
       apiKey: ({ player }) => player.apiKey,
       userFilters: ({ filter }) => filter.userFilters
     },
@@ -79,7 +80,7 @@ let player = new Vue({
             window.location.href = document.querySelector('.base-uri').content;
           });
         } else {
-          store.dispatch('INIT_CURRENT_TRACK');
+          store.dispatch('INIT_CURRENT_TRACK', false);
           this.initPlayer();
         }
       });
@@ -87,7 +88,7 @@ let player = new Vue({
 
     initPlayer() {
       store.dispatch('CREATE_AUDIO', this.currentTrack.id);
-      notification.songPlayed();
+
       this.registerEventListener();
     },
 
@@ -95,40 +96,40 @@ let player = new Vue({
       let { title, username } = this.currentTrack;
       this.duration = this.currentTrack.duration;
 
-      // Close audio context for Firefox:
-      // If we change the currentTime for the audio object, the volume gets louder and louder (bug?).
-      if(this.isFirefox && this.audioCtx !== null) {
-        this.audioCtx.close();
-        this.audioCtx = null;
-      }
-
       store.dispatch('SET_DURATION', this.duration);
       store.dispatch('CHANGE_TITLE', title + ' - ' + username);
 
-      this.initAudioContext();
+      if (this.audioCtx || this.started) {
+        this.initAudioContext();
+      } 
     },
 
     initAudioContext() {
       let self = this;
 
-      // We need to re-create the audio context in Firefox, because we close it earlier.
+      // Close and recreate audio context for Firefox:
+      // If we change the currentTime for the audio object, the volume gets louder and louder (bug?).
       if(this.isFirefox) {
-        this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        store.dispatch('UNSET_AUDIO_CONTEXT');
+        store.dispatch('CREATE_NEW_AUDIO_CONTEXT');
         this.audioSrc = this.audioCtx.createMediaElementSource(this.audio);
       } else {
         // Chrome can only call one time 'createMediaElementSource' on audio context.
         if( ! this.started) {
           this.audioSrc = this.audioCtx.createMediaElementSource(this.audio);
-          this.started = true;
         }
       }
 
+      this.started = true;
+      
       let analyser = this.audioCtx.createAnalyser();
 
       this.audioSrc.connect(analyser);
       this.audioSrc.connect(this.audioCtx.destination);
 
-      this.audio.play();
+      if (this.audioCtx) {
+        this.audio.play();
+      }
 
       let frequencyData = new Uint8Array(5);
 
@@ -144,8 +145,8 @@ let player = new Vue({
         analyser.smoothingTimeConstant = 1 - (4 / 100);
         analyser.getByteFrequencyData(frequencyData);
 
-        var radiusScale = d3.scale.linear().domain([0, d3.max(frequencyData)]).range([0, 1200 / 2]);
-        var circles = svg.selectAll('circle').data(frequencyData);
+        const radiusScale = d3.scale.linear().domain([0, d3.max(frequencyData)]).range([0, 1200 / 2]);
+        const circles = svg.selectAll('circle').data(frequencyData);
 
         circles.enter().append('circle');
 
@@ -155,11 +156,7 @@ let player = new Vue({
             cx: '50%',
             cy: 1200 / 2,
             fill: 'rgba(106,49,84,.2)',
-            //fill: 'rgba(255,255,255,.01)',
-            //'stroke-width': 2,
             'stroke-width': 0,
-            //'stroke-opacity': .1,
-            //stroke: function(d) { return '#602b4b' }
             stroke: '#fff'
           });
 
@@ -173,10 +170,12 @@ let player = new Vue({
       this.audio.removeEventListener('error', this.audioError);
       this.audio.removeEventListener('ended', this.audioEnded);
       this.audio.removeEventListener('canplay', this.audioCanPlay);
-
+      this.audio.removeEventListener('play', this.audioCanPlay);
+      
       this.audio.addEventListener('error', this.audioError);
       this.audio.addEventListener('ended', this.audioEnded);
       this.audio.addEventListener('canplay', this.audioCanPlay);
+      this.audio.addEventListener('play', this.audioCanPlay);
     },
 
     audioError() {
