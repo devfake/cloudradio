@@ -9,7 +9,7 @@ const state = {
   apiKey: null,
   lastTrackIndex: null,
   countPrevious: 0,
-  volume: .75
+  volume: .5
 };
 
 const mutations = {
@@ -104,7 +104,7 @@ const mutations = {
     if(savedVolume !== null) {
       state.volume = savedVolume;
     } else {
-      localStorage.setItem('user-volume', .75);
+      localStorage.setItem('user-volume', .5);
     }
   },
 

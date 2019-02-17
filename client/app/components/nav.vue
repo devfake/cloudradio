@@ -106,7 +106,7 @@
     ready: function() {
       let savedVolume = localStorage.getItem('user-volume');
       if(savedVolume == null) {
-        savedVolume = .75;
+        savedVolume = .5;
       }
 
       let slider = document.getElementById('volume');

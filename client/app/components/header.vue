@@ -20,7 +20,6 @@
 <script type="text/babel">
 
   import { initCurrentTrack } from '../store/actions';
-  import Player from '../player';
 
   export default {
     vuex: {
