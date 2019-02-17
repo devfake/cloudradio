@@ -1,13 +1,11 @@
-cloudradioo
+cloudradio
 ===============
 
-[cloudradioo.com](http://cloudradioo.com) is a web app for modern browsers that plays randomly all top 50 songs from the soundcloud charts. You will discover your new favorite song!
+[cloudradio.pyxl.cloud](https://cloudradio.pyxl.cloud) is a web app for modern browsers that plays randomly all top 50 songs from the soundcloud charts. You will discover your new favorite song!
 
 It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuejs.org) (with [Vuex](https://github.com/vuejs/vuex)).
 
-**NEW:** [Electron desktop app](https://github.com/devfake/cloudradioo-app)
-
-![cloudradioo](http://i.imgur.com/DqF9ARE.png)
+![cloudradio](http://i.imgur.com/DqF9ARE.png)
 
 ### Requirements
 
@@ -18,7 +16,7 @@ It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuej
 
 ### Install
 
-* Download cloudradioo and `cd` into `/backend`.
+* Download cloudradio and `cd` into `/backend`.
 * Rename `.env.example` to `.env` and set your soundcloud api key for `CLIENT_ID`.
 * Run `composer install`.
 * Give `/backend/storage` recursive write access.

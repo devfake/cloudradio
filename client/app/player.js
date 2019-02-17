@@ -60,7 +60,7 @@ let player = new Vue({
     parseURI() {
       let uri = window.location.pathname;
 
-      // If we develop locally with pathname like 'cloudradioo/public',
+      // If we develop locally with pathname like 'cloudradio/public',
       // we need to split the pathname to get the right shared track id.
       let split = uri.split('/');
 

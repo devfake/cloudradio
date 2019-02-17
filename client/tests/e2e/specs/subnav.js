@@ -12,10 +12,10 @@ module.exports = {
     client
     .url(client.launch_url)
     .resizeWindow(1500, 800)
-    .click('.nav-cloudradioo')
+    .click('.nav-cloudradio')
     .pause(500)
     .assert.visible('.subnav')
-    .click('.nav-cloudradioo')
+    .click('.nav-cloudradio')
     .pause(500)
     .assert.hidden('.subnav')
     .end();
@@ -25,7 +25,7 @@ module.exports = {
     client
     .url(client.launch_url)
     .resizeWindow(1500, 800)
-    .click('.nav-cloudradioo')
+    .click('.nav-cloudradio')
     .pause(500)
     .assert.containsText('.option-elements.active', 'Discover New Music')
     .click('.nav-filter')

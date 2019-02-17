@@ -4,7 +4,7 @@ import Vue from 'vue';
 import Resource from 'vue-resource';
 
 import progress from './components/progress.vue';
-import cloudradiooHeader from './components/header.vue';
+import cloudradioHeader from './components/header.vue';
 import navigation from './components/nav.vue';
 
 import Player from './player';
@@ -26,7 +26,7 @@ new Vue({
 
   components: {
     progress,
-    cloudradiooHeader,
+    cloudradioHeader,
     navigation
   },
 

@@ -15,7 +15,7 @@ module.exports = {
 
   "test_settings": {
     "default": {
-      "launch_url" : "http://localhost:8888/cloudradioo/public/",
+      "launch_url" : "http://localhost:8888/cloudradio/public/",
       "selenium_port": 4444,
       "selenium_host": "localhost",
       "silent": true,

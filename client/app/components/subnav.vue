@@ -1,9 +1,9 @@
 <template>
   <section class="subnav" :class="{active: subNav}">
-    <div class="option-elements" :class="{active: subNav === 'cloudradioo'}">
+    <div class="option-elements" :class="{active: subNav === 'cloudradio'}">
       <h4>Discover New Music</h4>
       <p>
-        cloudradioo is a web app that plays randomly all top 50 songs from the <a href="https://soundcloud.com" target="_blank">soundcloud</a> charts. You will discover your new favorite song!
+        cloudradio is a web app that plays randomly all top 50 songs from the <a href="https://soundcloud.com" target="_blank">soundcloud</a> charts. You will discover your new favorite song!
 
         <br><br>
         You can pause / replay by pressing the <code>space</code> key and <code>&#9668;</code> / <code>&#9658;</code> or <code>A</code> / <code>D</code> for previous / next random track. <br> Press <code>&#9650;</code> / <code>&#9660;</code> or <code>W</code> / <code>S</code> to increase / decrase volume. <br> Press <code>esc</code> to close this window.
@@ -12,7 +12,7 @@
         You also can filter your music taste or see a history of your played tracks.
 
         <br><br>
-        This project is open source and is licensed under the MIT-license. If you would like to contribute, you find the project on <a href="https://github.com/devfake/cloudradioo" target="_blank">Github</a>.
+        This project is open source and is licensed under the MIT-license. If you would like to contribute, you find the project on <a href="https://github.com/devfake/cloudradio" target="_blank">Github</a>.
       </p>
     </div>
 

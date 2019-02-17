@@ -6,7 +6,7 @@
       <a @click="enableShareTrack()" class="share-btn">Share Track</a>
 
       <div class="share-track-wrap">
-        <input type="text" class="share-track" value="http://cloudradioo.com/{{ currentTrack.id }}" readonly>
+        <input type="text" class="share-track" value="http://cloudradio.pyxl.cloud/{{ currentTrack.id }}" readonly>
         <a @click="disableShareTrack()" class="close-btn">Close</a>
       </div>
     </div>

@@ -137,6 +137,10 @@ const mutations = {
   },
 
   INIT_PREVIOUS_TRACK(state) {
+    if(state.audioCtx === null) {
+      state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    
     state.playing = true;
     state.currentTrack = state.history[state.history.length - (2 + state.countPrevious)].data;
     state.countPrevious++;
@@ -164,6 +168,10 @@ const mutations = {
   },
 
   INIT_CURRENT_TRACK(state, play = true) {
+    if(state.audioCtx === null && play) {
+      state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    
     state.playing = play;
     state.countPrevious = 0;
 
