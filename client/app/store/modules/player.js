@@ -83,7 +83,7 @@ const mutations = {
   },
 
   CREATE_AUDIO(state, id) {
-    let src = `http://api.soundcloud.com/tracks/${id}/stream?client_id=${state.apiKey}`;
+    let src = `https://api.soundcloud.com/tracks/${id}/stream?client_id=${state.apiKey}`;
 
     // Change only the source and do not re-create the audio object.
     // If you skip a track, this track will continue in the background

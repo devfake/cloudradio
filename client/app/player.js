@@ -73,7 +73,7 @@ let player = new Vue({
 
         // Is there an shared uri? Fetch the track and store them as currentTrack.
         if(this.sharedTrack) {
-          this.$http.get(`http://api.soundcloud.com/tracks/${this.sharedTrack}?client_id=${this.apiKey}`).then(value => {
+          this.$http.get(`https://api.soundcloud.com/tracks/${this.sharedTrack}?client_id=${this.apiKey}`).then(value => {
             store.dispatch('INIT_SHARED_TRACK', value.data);
             this.initPlayer();
           }, error => {
