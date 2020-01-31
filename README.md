@@ -1,7 +1,9 @@
 cloudradio
 ===============
 
-[cloudradio.pyxl.cloud](https://cloudradio.pyxl.cloud) is a web app for modern browsers that plays randomly all top 50 songs from the soundcloud charts. You will discover your new favorite song!
+## Looks like Soundcloud no longer allows to use the charts API for others. At least my API key doesn't work anymore, and you can't register new keys.
+
+cloudradio is a web app for modern browsers that plays randomly all top 50 songs from the soundcloud charts. You will discover your new favorite song!
 
 It's build on top of [Laravel](https://www.laravel.com) and [Vue.js](http://vuejs.org) (with [Vuex](https://github.com/vuejs/vuex)).
 
